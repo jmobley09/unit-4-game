@@ -34,7 +34,7 @@
     <!-- Start of Script -->
     <script type="text/javascript">
         // Create the array of characters
-        var characters = ['bobafett', 'darthvader', 'hansolo', 'lukeskywalker'];
+        var characters = ['Boba Fett', 'Darth Vader', 'Han Solo', 'Luke Skywalker'];
 
         // Create for loop to iterate through characters
         for (var i = 0; i < characters.length; i++) {
@@ -65,8 +65,15 @@
             $(this).attr('Position', 'Friendly');
             $('#ChosenChar').append(this);
             chosen ++;
-            $('.character-image').off('click');
+            // turns of ability to click
+            // $('.character-image').off('click');
+            $('img').each(function() {
+                if($(this).attr('Position') == 'Neutral') {
+                    $("#Enemies").append(this); 
+                }
+            });
         });
+        
         
         
     </script>
