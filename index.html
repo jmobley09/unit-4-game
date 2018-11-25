@@ -60,20 +60,14 @@
         // all others will be assigned to the position of enemy
         // friendly will be moved to the "your character" section
         // all others will be moved to the enemy available section
+        var chosen = 0;
         $('.character-image').one('click', function() {
             $(this).attr('Position', 'Friendly');
-            var NotChosen = $('.character-image').attr('Position') == 'Neutral';
-            console.log(NotChosen);
-            
-            if ($(this).attr('Position') == 'Friendly') {
-                $('#ChosenChar').append(this);
-            }
-            
-            else {
-                $('#Enemies').append(NotChosen);
-            }
+            $('#ChosenChar').append(this);
+            chosen ++;
+            $('.character-image').off('click');
         });
-
+        
         
     </script>
 </body>
